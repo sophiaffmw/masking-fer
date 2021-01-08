@@ -9,7 +9,8 @@ from torch.utils.data import Dataset
 from torchvision import transforms
 
 # from imgaug.augmentables.segmaps import SegmentationMapOnImage
-from imgaug.augmentables.segmaps import SegmentationMapsOnImage
+# from imgaug.augmentables.segmaps import SegmentationMapsOnImage
+import imgaug as ia
 from utils.utils import read_unicode_image as imread
 from skimage.morphology import skeletonize
 
@@ -89,7 +90,7 @@ class TableDataset(Dataset):
         return image, mask
 
     def _aug(self, image, mask):
-        mask = SegmentationMapsOnImage(mask, image.shape[:2])
+        mask = ia.SegmentationMapsOnImage(mask, image.shape[:2])
 
         seq = iaa.Sequential(
             [
