@@ -70,7 +70,7 @@ def main():
         prediction_list = []  # each item is 7-ele array
 
         print("Processing", checkpoint_path)
-        if os.path.exists("./saved/results/{}.npy".format(checkpoint_path)):
+        if os.path.exists("../saved/results/{}.npy".format(checkpoint_path)):
             continue
         print(model_name)
         if model_name == "vgg19":
@@ -78,7 +78,7 @@ def main():
         # else:
         #     model = vgg19(in_channels=3, num_classes=7)
 
-        state = torch.load(os.path.join("./saved/checkpoints", checkpoint_path))
+        state = torch.load(os.path.join("../saved/checkpoints", checkpoint_path))
         model.load_state_dict(state["net"])
 
         model.cuda()
@@ -97,7 +97,7 @@ def main():
                 outputs = [round(o, 4) for o in outputs.numpy()]
                 prediction_list.append(outputs)
 
-        np.save("./saved/results/{}.npy".format(checkpoint_path), prediction_list)
+        np.save("../saved/results/{}.npy".format(checkpoint_path), prediction_list)
 
 
 if __name__ == "__main__":
