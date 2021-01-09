@@ -68,6 +68,7 @@ def main():
 
     for model_name, checkpoint_path in model_dict:
         prediction_list = []  # each item is 7-ele array
+        test_target = []
 
         print("Processing", checkpoint_path)
         if os.path.exists("../saved/results/{}.npy".format(checkpoint_path)):
@@ -94,8 +95,11 @@ def main():
 
                 outputs = [round(o, 4) for o in outputs.numpy()]
                 prediction_list.append(outputs)
+                test_target.append(targets)
 
         np.save("../saved/results/{}.npy".format(checkpoint_path), prediction_list)
+
+        np.save("../saved/results/test_targets.npy", test_target)
 
 
 if __name__ == "__main__":
