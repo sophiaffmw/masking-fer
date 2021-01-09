@@ -72,9 +72,11 @@ def main():
         print("Processing", checkpoint_path)
         if os.path.exists("./saved/results/{}.npy".format(checkpoint_path)):
             continue
-
-        model = getattr(models, model_name)
-        model = model(in_channels=3, num_classes=7)
+        print(model_name)
+        # if model_name == "vgg19":
+        #     model = vgg19(in_channels=3, num_classes=7)
+        # else:
+        #     model = vgg19(in_channels=3, num_classes=7)
 
         state = torch.load(os.path.join("saved/checkpoints", checkpoint_path))
         model.load_state_dict(state["net"])
