@@ -39,7 +39,7 @@ def main():
     test_results_list = np.array(test_results_list)
 
     # load test targets
-    test_targets = np.load("../saved/test_targets.npy", allow_pickle=True)
+    test_targets = np.load("../saved/results/test_targets.npy", allow_pickle=True)
 
     model_dict_proba = [1, 1, 1, 1, 1, 1, 1]
 
