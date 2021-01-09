@@ -14,13 +14,13 @@ torch.backends.cudnn.benchmark = False
 
 
 model_dict = [
-    ("resnet18", "resnet18_rot30_2019Nov05_17.44"),
-    ("resnet50_pretrained_vgg", "resnet50_pretrained_vgg_rot30_2019Nov13_08.20"),
-    ("resnet101", "resnet101_rot30_2019Nov14_18.12"),
-    ("cbam_resnet50", "cbam_resnet50_rot30_2019Nov15_12.40"),
-    ("efficientnet_b2b", "efficientnet_b2b_rot30_2019Nov15_20.02"),
-    ("resmasking_dropout1", "resmasking_dropout1_rot30_2019Nov17_14.33"),
-    ("resmasking", "resmasking_rot30_2019Nov14_04.38"),
+    # ("resnet18", "resnet18_rot30_2019Nov05_17.44"),
+    # ("resnet50_pretrained_vgg", "resnet50_pretrained_vgg_rot30_2019Nov13_08.20"),
+    # ("resnet101", "resnet101_rot30_2019Nov14_18.12"),
+    # ("cbam_resnet50", "cbam_resnet50_rot30_2019Nov15_12.40"),
+    # ("efficientnet_b2b", "efficientnet_b2b_rot30_2019Nov15_20.02"),
+    # ("resmasking_dropout1", "resmasking_dropout1_rot30_2019Nov17_14.33"),
+    ("resmasking", "resmasking_dropout1_rot30_2019Nov17_14.33"),
 ]
 
 

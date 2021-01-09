@@ -45,7 +45,7 @@ model_dict = [
     # ("efficientnet_b2b", "efficientnet_b2b_rot30_2019Nov15_20.02"),
     # ("resmasking_dropout1", "resmasking_dropout1_rot30_2019Nov17_14.33"),
 
-    ("vgg19", "vgg19_rot30_2019Dec01_14.01"),
+    # ("vgg19", "vgg19_rot30_2019Dec01_14.01"),
     # ("resnet18_centerloss", "resnet18_centerloss_rot30_2019Nov09_18.24"),
     # ("resnet18", "resnet18_rot30_no_fixed_2019Nov11_08.33"),
     # ("resnet18", "resnet18_rot30_fixed_layers_1_2019Nov11_10.03"),
@@ -72,9 +72,7 @@ def main():
         print("Processing", checkpoint_path)
         if os.path.exists("../saved/results/{}.npy".format(checkpoint_path)):
             continue
-        print(model_name)
-        if model_name == "vgg19":
-            model = vgg19(in_channels=3, num_classes=7)
+        model = resmasking_dropout1(in_channels=3, num_classes=7)
         # else:
         #     model = vgg19(in_channels=3, num_classes=7)
 
