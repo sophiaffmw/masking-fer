@@ -78,7 +78,7 @@ def main():
         # else:
         #     model = vgg19(in_channels=3, num_classes=7)
 
-        state = torch.load(os.path.join("saved/checkpoints", checkpoint_path))
+        state = torch.load(os.path.join("./saved/checkpoints", checkpoint_path))
         model.load_state_dict(state["net"])
 
         model.cuda()
