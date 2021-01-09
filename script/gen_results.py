@@ -73,8 +73,8 @@ def main():
         if os.path.exists("./saved/results/{}.npy".format(checkpoint_path)):
             continue
         print(model_name)
-        # if model_name == "vgg19":
-        #     model = vgg19(in_channels=3, num_classes=7)
+        if model_name == "vgg19":
+            model = vgg19(in_channels=3, num_classes=7)
         # else:
         #     model = vgg19(in_channels=3, num_classes=7)
 
