@@ -15,8 +15,11 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
 from tqdm import tqdm
-from .models.resmasking import *
-from .models.vgg import *
+import sys, os
+sys.path.append(os.path.abspath(os.path.join('..', 'models')))
+
+from models.resmasking import *
+from models.vgg import *
 import torch.nn.functional as F
 from utils.datasets.fer2013dataset import fer2013
 from utils.generals import make_batch
