@@ -117,6 +117,8 @@ class Masking4(nn.Module):
         x4 = self.conv4(p3)
 
         x5 = self.up_pool5(x4)
+        print('x3', x3.shape)
+        print('x5', x5.shape)
         x5 = torch.cat([x5, x3], dim=1)
         x5 = self.conv5(x5)
 
