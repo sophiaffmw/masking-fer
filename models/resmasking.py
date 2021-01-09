@@ -43,25 +43,29 @@ class ResMasking(ResNet):
         x = self.bn1(x)
         x = self.relu(x)
         x = self.maxpool(x)  # 56
-        print('x shape')
+        
 
-        print(x.shape)
+        print('x shape, before layer1, x.shape')
         x = self.layer1(x)  # 56
+        print('x shape, after layer1, x.shape')
         m = self.mask1(x)
         x = x * (1 + m)
         # x = x * m
-
+        print('x shape, before layer2, x.shape')
         x = self.layer2(x)  # 28
+        print('x shape, after layer2, x.shape')
         m = self.mask2(x)
         x = x * (1 + m)
         # x = x * m
-
+        print('x shape, before layer3, x.shape')
         x = self.layer3(x)  # 14
+        print('x shape, after layer3, x.shape')
         m = self.mask3(x)
         x = x * (1 + m)
         # x = x * m
-
+        print('x shape, before layer4, x.shape')
         x = self.layer4(x)  # 7
+        print('x shape, after layer3, x.shape')
         m = self.mask4(x)
         x = x * (1 + m)
         # x = x * m
