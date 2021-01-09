@@ -71,8 +71,8 @@ def main():
         test_target = []
 
         print("Processing", checkpoint_path)
-        if os.path.exists("../saved/results/{}.npy".format(checkpoint_path)):
-            continue
+        # if os.path.exists("../saved/results/{}.npy".format(checkpoint_path)):
+        #     continue
         model = resmasking_dropout1(in_channels=3, num_classes=7)
         # else:
         #     model = vgg19(in_channels=3, num_classes=7)
@@ -86,15 +86,15 @@ def main():
         with torch.no_grad():
             for idx in tqdm(range(len(test_set)), total=len(test_set), leave=False):
                 images, targets = test_set[idx]
-                images = make_batch(images)
-                images = images.cuda(non_blocking=True)
+                # images = make_batch(images)
+                # images = images.cuda(non_blocking=True)
 
-                outputs = model(images).cpu()
-                outputs = F.softmax(outputs, 1)
-                outputs = torch.sum(outputs, 0)  # outputs.shape [tta_size, 7]
+                # outputs = model(images).cpu()
+                # outputs = F.softmax(outputs, 1)
+                # outputs = torch.sum(outputs, 0)  # outputs.shape [tta_size, 7]
 
-                outputs = [round(o, 4) for o in outputs.numpy()]
-                prediction_list.append(outputs)
+                # outputs = [round(o, 4) for o in outputs.numpy()]
+                # prediction_list.append(outputs)
                 test_target.append(targets)
 
         np.save("../saved/results/{}.npy".format(checkpoint_path), prediction_list)
