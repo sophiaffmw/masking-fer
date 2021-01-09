@@ -98,7 +98,7 @@ class ResMasking50(ResNet):
         x = self.bn1(x)
         x = self.relu(x)
         x = self.maxpool(x)  # 56
-
+        print(x.shape)
         x = self.layer1(x)  # 56
         m = self.mask1(x)
         x = x * (1 + m)
