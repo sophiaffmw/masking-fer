@@ -33,13 +33,13 @@ def main():
     test_results_list = []
     for model_name, checkpoint_path in model_dict:
         test_results = np.load(
-            "./saved/results/{}.npy".format(checkpoint_path), allow_pickle=True
+            "../saved/results/{}.npy".format(checkpoint_path), allow_pickle=True
         )
         test_results_list.append(test_results)
     test_results_list = np.array(test_results_list)
 
     # load test targets
-    test_targets = np.load("./saved/test_targets.npy", allow_pickle=True)
+    test_targets = np.load("../saved/test_targets.npy", allow_pickle=True)
 
     model_dict_proba = [1, 1, 1, 1, 1, 1, 1]
 
