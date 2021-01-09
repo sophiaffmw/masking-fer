@@ -16,7 +16,7 @@ torch.backends.cudnn.benchmark = False
 
 from tqdm import tqdm
 import sys, os
-sys.path.append(os.path.abspath(os.path.join('..', 'models')))
+sys.path.append(os.path.abspath(os.path.join('..')))
 
 # from models.resmasking import *
 # from models.vgg import *
