@@ -1,4 +1,5 @@
 import os
+import sys
 import random
 import json
 import imgaug
@@ -15,11 +16,10 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
 from tqdm import tqdm
-import sys, os
-sys.path.append(os.path.abspath(os.path.join('..')))
 
-# from models.resmasking import *
-# from models.vgg import *
+sys.path.append(os.path.abspath(os.path.join('..')))
+from models.resmasking import *
+from models.vgg import *
 import torch.nn.functional as F
 from utils.datasets.fer2013dataset import fer2013
 from utils.generals import make_batch
