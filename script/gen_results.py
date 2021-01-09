@@ -51,8 +51,8 @@ model_dict = [
     # ('resmasking', 'resmasking_rot30_2019Nov13_14.12'),
     # ('resmasking', 'resmasking_rot30_2019Nov13_18.58'),
     # ("resmasking", "resmasking_rot30_2019Nov14_04.38"),
-    ("resmasking", "resmasking_rot30_2019Nov17_06.13"),
-    ("resmasking_dropout2", "resmasking_dropout2_rot30_2019Nov17_14.34"),
+    # ("resmasking", "resmasking_rot30_2019Nov17_06.13"),
+    ("resmasking_dropout1", "resmasking_dropout1_rot30_2019Nov17_14.33"),
 ]
 
 
