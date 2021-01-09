@@ -61,7 +61,7 @@ model_dict = [
 
 
 def main():
-    with open("./configs/fer2013_config.json") as f:
+    with open("/configs/fer2013_config.json") as f:
         configs = json.load(f)
 
     test_set = fer2013("test", configs, tta=True, tta_size=8)
